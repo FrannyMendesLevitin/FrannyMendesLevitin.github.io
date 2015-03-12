@@ -1,0 +1,404 @@
+<html>
+<head>
+<title>canvas</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+	html {
+		box-sizing: border-box;
+	}
+	*, *:before, *:after {
+		padding:0px;
+		margin:0px;
+		box-sizing:inherit;
+	}
+	body {
+		font-family: helvetica;
+	}
+	a {
+		text-decoration: none;
+		/*list-style-type: none;*/
+		color:black;
+	}
+	h1{
+		width:100%;
+		margin-top: 1em;
+		margin-left: 1em;
+	}
+	#canvas-wrapper {
+		width:1152px;
+		height:576px;
+		margin:50 auto;
+	}
+	.canvas-cell {
+		display:table-cell;
+		cursor: crosshair;
+	}
+	.cavas-cell img {
+		width: 72px;
+		height: 72px;
+	}
+	.canvas-cell img:hover {
+		  opacity: 0.6;
+		/*  border: green solid 1px;*/
+		/*  -webkit-box-shadow: 10px 10px 5px #888888;
+		box-shadow:10px 10px 5px #888888;	*/
+	}
+	/*#footer {
+		width:100%;
+		
+		position:relative;
+		bottom:2.5em;
+		line-height: 1.3em;
+		
+
+	}*/
+	#footerRight {
+		/*float:right;*/
+		
+		bottom:1em;
+
+		
+	}
+	#about {
+		position:absolute;
+		top:1em;
+		right:1em;
+	}
+	#aboutText {
+		float:left;
+	}
+	#submitForm {
+		width:75%;
+		margin: 0 auto;
+	}
+
+</style>
+</head>
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<!-- Save for Web Slices (canvas.jpg) -->
+
+<span><h1>Alien Objects</h1></span>
+
+<span id="aboutText" style="text-align:left; display: none; max-width:690px; margin:1em 1em; font-size:16px;">Alien Objects is an artwork celebrating open referencing of information. <br>Statement from the artist: Impulses in my own life, and data I acquire in physical and digital space become the evidence of my stories and the props for my performances. I invite you to join by submitting content or email me with feedback or questions at fmendeslevitin[at]gmail.com</span>
+<span id="about" style="text-align: left;"><a href="#">About</span>
+
+
+
+<div id="canvas-wrapper">
+	<div class="canvas-row">
+		<div class="canvas-cell" data-row=0 data-col=0>
+			<img src="images/canvas_01.jpg"></div>
+		<div class="canvas-cell" data-row=0 data-col=1>
+			<img src="images/canvas_02.jpg"></div>
+		<div class="canvas-cell" data-row=0 data-col=2>
+			<img src="images/canvas_03.jpg"></div>
+		<div class="canvas-cell" data-row=0 data-col=3>
+			<img src="images/canvas_04.jpg"></div>
+		<div class="canvas-cell" data-row=0 data-col=4>
+			<img src="images/canvas_05.jpg"></div>
+		<div class="canvas-cell"  data-row=0 data-col=5>
+			<img src="images/canvas_06.jpg"></div>
+		<div class="canvas-cell" data-row=0 data-col=6>
+			<img src="images/canvas_07.jpg"></div>
+		<div class="canvas-cell" data-row=0 data-col=7>
+			<img src="images/canvas_08.jpg"></div>
+		<div class="canvas-cell" data-row=0 data-col=8>
+			<img src="images/canvas_09.jpg"></div>
+		<div class="canvas-cell" data-row=0 data-col=9>
+			<img src="images/canvas_10.jpg"></div>
+		<div class="canvas-cell" data-row=0 data-col=10>
+			<img src="images/canvas_11.jpg"></div>
+		<div class="canvas-cell" data-row=0 data-col=11>
+			<img src="images/canvas_12.jpg"></div>
+		<div class="canvas-cell" data-row=0 data-col=12>
+			<img src="images/canvas_13.jpg"></div>
+		<div class="canvas-cell" data-row=0 data-col=13>
+			<img src="images/canvas_14.jpg"></div>
+		<div class="canvas-cell" data-row=0 data-col=14>
+			<img src="images/canvas_15.jpg"></div>
+		<div class="canvas-cell" data-row=0 data-col=15>
+			<img src="images/canvas_16.jpg"></div>
+	</div>
+	<div class="canvas-row">
+		<div class="canvas-cell" data-row=1 data-col=0>
+			<img src="images/canvas_17.jpg"></div>
+		<div class="canvas-cell" data-row=1 data-col=1>
+			<img src="images/canvas_18.jpg"></div>
+		<div class="canvas-cell" data-row=1 data-col=2>
+			<img src="images/canvas_19.jpg"></div>
+		<div class="canvas-cell" data-row=1 data-col=3>
+			<img src="images/canvas_20.jpg"></div>
+		<div class="canvas-cell" data-row=1 data-col=4>
+			<img src="images/canvas_21.jpg"></div>
+		<div class="canvas-cell" data-row=1 data-col=5>
+			<img src="images/canvas_22.jpg"></div>
+		<div class="canvas-cell" data-row=1 data-col=6>
+			<img src="images/canvas_23.jpg"></div>
+		<div class="canvas-cell" data-row=1 data-col=7>
+			<img src="images/canvas_24.jpg"></div>
+		<div class="canvas-cell" data-row=1 data-col=8>
+			<img src="images/canvas_25.jpg"></div>
+		<div class="canvas-cell" data-row=1 data-col=9>
+			<img src="images/canvas_26.jpg"></div>
+		<div class="canvas-cell" data-row=1 data-col=10>
+			<img src="images/canvas_27.jpg"></div>
+		<div class="canvas-cell" data-row=1 data-col=11>
+			<img src="images/canvas_28.jpg"></div>
+		<div class="canvas-cell" data-row=1 data-col=12>
+			<img src="images/canvas_29.jpg"></div>
+		<div class="canvas-cell" data-row=1 data-col=13>
+			<img src="images/canvas_30.jpg"></div>
+		<div class="canvas-cell" data-row=1 data-col=14>
+			<img src="images/canvas_31.jpg"></div>
+		<div class="canvas-cell" data-row=1 data-col=15>
+			<img src="images/canvas_32.jpg"></div>
+	</div>
+	<div class="canvas-row">
+		<div class="canvas-cell" data-row=2 data-col=1>
+			<img src="images/canvas_33.jpg"></div>
+		<div class="canvas-cell" data-row=2 data-col=2>
+			<img src="images/canvas_34.jpg"></div>
+		<div class="canvas-cell" data-row=2 data-col=3>
+			<img src="images/canvas_35.jpg"></div>
+		<div class="canvas-cell" data-row=2 data-col=4>
+			<img src="images/canvas_36.jpg"></div>
+		<div class="canvas-cell" data-row=2 data-col=5>
+			<img src="images/canvas_37.jpg"></div>
+		<div class="canvas-cell" data-row=2 data-col=6>
+			<img src="images/canvas_38.jpg"></div>
+		<div class="canvas-cell" data-row=2 data-col=7>
+			<img src="images/canvas_39.jpg"></div>
+		<div class="canvas-cell" data-row=2 data-col=8>
+			<img src="images/canvas_40.jpg"></div>
+		<div class="canvas-cell" data-row=2 data-col=9>
+			<img src="images/canvas_41.jpg"></div>
+		<div class="canvas-cell" data-row=2 data-col=10>
+			<img src="images/canvas_42.jpg"></div>
+		<div class="canvas-cell" data-row=2 data-col=11>
+			<img src="images/canvas_43.jpg"></div>
+		<div class="canvas-cell" data-row=2 data-col=12>
+			<img src="images/canvas_44.jpg"></div>
+		<div class="canvas-cell" data-row=2 data-col=13>
+			<img src="images/canvas_45.jpg"></div>
+		<div class="canvas-cell" data-row=2 data-col=14>
+			<img src="images/canvas_46.jpg"></div>
+		<div class="canvas-cell" data-row=2 data-col=15>
+			<img src="images/canvas_47.jpg"></div>
+		<div class="canvas-cell" data-row=2 data-col=16>
+			<img src="images/canvas_48.jpg"></div>
+	</div>
+	<div class="canvas-row">
+		<div class="canvas-cell" data-row=3 data-col=0>
+			<img src="images/canvas_49.jpg"></div>
+		<div class="canvas-cell"  data-row=3 data-col=1>
+			<img src="images/canvas_50.jpg"></div>
+		<div class="canvas-cell" data-row=3 data-col=2>
+			<img src="images/canvas_51.jpg"></div>
+		<div class="canvas-cell" data-row=3 data-col=3>
+			<img src="images/canvas_52.jpg"></div>
+		<div class="canvas-cell" data-row=3 data-col=4>
+			<img src="images/canvas_53.jpg"></div>
+		<div class="canvas-cell" data-row=3 data-col=5>
+			<img src="images/canvas_54.jpg"></div>
+		<div class="canvas-cell" data-row=3 data-col=6>
+			<img src="images/canvas_55.jpg"></div>
+		<div class="canvas-cell" data-row=3 data-col=7>
+			<img src="images/canvas_56.jpg"></div>
+		<div class="canvas-cell" data-row=3 data-col=8>
+			<img src="images/canvas_57.jpg"></div>
+		<div class="canvas-cell" data-row=3 data-col=9>
+			<img src="images/canvas_58.jpg"></div>
+		<div class="canvas-cell" data-row=3 data-col=10>
+			<img src="images/canvas_59.jpg"></div>
+		<div class="canvas-cell" data-row=3 data-col=11>
+			<img src="images/canvas_60.jpg"></div>
+		<div class="canvas-cell" data-row=3 data-col=12>
+			<img src="images/canvas_61.jpg"></div>
+		<div class="canvas-cell" data-row=3 data-col=13>
+			<img src="images/canvas_62.jpg"></div>
+		<div class="canvas-cell" data-row=3 data-col=14>
+			<img src="images/canvas_63.jpg"></div>
+		<div class="canvas-cell" data-row=3 data-col=15>
+			<img src="images/canvas_64.jpg"></div>
+	</div>
+	<div class="canvas-row">
+		<div class="canvas-cell" data-row=4 data-col=0>
+			<img src="images/canvas_65.jpg"></div>
+		<div class="canvas-cell" data-row=4 data-col=1>
+			<img src="images/canvas_66.jpg"></div>
+		<div class="canvas-cell" data-row=4 data-col=2>
+			<img src="images/canvas_67.jpg"></div>
+		<div class="canvas-cell" data-row=4 data-col=3>
+			<img src="images/canvas_68.jpg"></div>
+		<div class="canvas-cell" data-row=4 data-col=4>
+			<img src="images/canvas_69.jpg"></div>
+		<div class="canvas-cell" data-row=4 data-col=5>
+			<img src="images/canvas_70.jpg"></div>
+		<div class="canvas-cell" data-row=4 data-col=6>
+			<img src="images/canvas_71.jpg"></div>
+		<div class="canvas-cell" data-row=4 data-col=7>
+			<img src="images/canvas_72.jpg"></div>
+		<div class="canvas-cell" data-row=4 data-col=8>
+			<img src="images/canvas_73.jpg"></div>
+		<div class="canvas-cell" data-row=4 data-col=9>
+			<img src="images/canvas_74.jpg"></div>
+		<div class="canvas-cell" data-row=4 data-col=10>
+			<img src="images/canvas_75.jpg"></div>
+		<div class="canvas-cell" data-row=4 data-col=11>
+			<img src="images/canvas_76.jpg"></div>
+		<div class="canvas-cell" data-row=4 data-col=12>
+			<img src="images/canvas_77.jpg"></div>
+		<div class="canvas-cell" data-row=4 data-col=13>
+			<img src="images/canvas_78.jpg"></div>
+		<div class="canvas-cell" data-row=4 data-col=14>
+			<img src="images/canvas_79.jpg"></div>
+		<div class="canvas-cell" data-row=4 data-col=15>
+			<img src="images/canvas_80.jpg"></div>
+	</div>
+	<div class="canvas-row">
+		<div class="canvas-cell" data-row=5 data-col=0>
+			<img src="images/canvas_81.jpg"></div>
+		<div class="canvas-cell" data-row=5 data-col=1>
+			<img src="images/canvas_82.jpg"></div>
+		<div class="canvas-cell" data-row=5 data-col=2>
+			<img src="images/canvas_83.jpg"></div>
+		<div class="canvas-cell" data-row=5 data-col=3>
+			<img src="images/canvas_84.jpg"></div>
+		<div class="canvas-cell" data-row=5 data-col=4>
+			<img src="images/canvas_85.jpg"></div>
+		<div class="canvas-cell" data-row=5 data-col=5>
+			<img src="images/canvas_86.jpg"></div>
+		<div class="canvas-cell" data-row=5 data-col=6>
+			<img src="images/canvas_87.jpg"></div>
+		<div class="canvas-cell" data-row=5 data-col=7>
+			<img src="images/canvas_88.jpg"></div>
+		<div class="canvas-cell" data-row=5 data-col=8>
+			<img src="images/canvas_89.jpg"></div>
+		<div class="canvas-cell" data-row=5 data-col=9>
+			<img src="images/canvas_90.jpg"></div>
+		<div class="canvas-cell" data-row=5 data-col=10>
+			<img src="images/canvas_91.jpg"></div>
+		<div class="canvas-cell" data-row=5 data-col=11>
+			<img src="images/canvas_92.jpg"></div>
+		<div class="canvas-cell" data-row=5 data-col=12>
+			<img src="images/canvas_93.jpg"></div>
+		<div class="canvas-cell" data-row=5 data-col=13>
+			<img src="images/canvas_94.jpg"></div>
+		<div class="canvas-cell" data-row=5 data-col=14>
+			<img src="images/canvas_95.jpg"></div>
+		<div class="canvas-cell" data-row=5 data-col=15>
+			<img src="images/canvas_96.jpg"></div>
+	</div>
+	<div class="canvas-row">
+		<div class="canvas-cell" data-row=6 data-col=0>
+			<img src="images/canvas_97.jpg"></div>
+		<div class="canvas-cell" data-row=6 data-col=1>
+			<img src="images/canvas_98.jpg"></div>
+		<div class="canvas-cell" data-row=6 data-col=2>
+			<img src="images/canvas_99.jpg"></div>
+		<div class="canvas-cell" data-row=6 data-col=3>
+			<img src="images/canvas_100.jpg"></div>
+		<div class="canvas-cell" data-row=6 data-col=4>
+			<img src="images/canvas_101.jpg"></div>
+		<div class="canvas-cell" data-row=6 data-col=5>
+			<img src="images/canvas_102.jpg"></div>
+		<div class="canvas-cell" data-row=6 data-col=6>
+			<img src="images/canvas_103.jpg"></div>
+		<div class="canvas-cell" data-row=6 data-col=7>
+			<img src="images/canvas_104.jpg"></div>
+		<div class="canvas-cell" data-row=6 data-col=8>
+			<img src="images/canvas_105.jpg"></div>
+		<div class="canvas-cell" data-row=6 data-col=9>
+			<img src="images/canvas_106.jpg"></div>
+		<div class="canvas-cell" data-row=6 data-col=10>
+			<img src="images/canvas_107.jpg"></div>
+		<div class="canvas-cell" data-row=6 data-col=11>
+			<img src="images/canvas_108.jpg"></div>
+		<div class="canvas-cell" data-row=6 data-col=12>
+			<img src="images/canvas_109.jpg"></div>
+		<div class="canvas-cell" data-row=6 data-col=13>
+			<img src="images/canvas_110.jpg"></div>
+		<div class="canvas-cell" data-row=6 data-col=14>
+			<img src="images/canvas_111.jpg"></div>
+		<div class="canvas-cell" data-row=6 data-col=15>
+			<img src="images/canvas_112.jpg"></div>
+	</div>
+	<div class="canvas-row">
+		<div class="canvas-cell" data-row=7 data-col=0>
+			<img src="images/canvas_113.jpg"></div>
+		<div class="canvas-cell" data-row=7 data-col=1>
+			<img src="images/canvas_114.jpg"></div>
+		<div class="canvas-cell" data-row=7 data-col=2>
+			<img src="images/canvas_115.jpg"></div>
+		<div class="canvas-cell" data-row=7 data-col=3>
+			<img src="images/canvas_116.jpg"></div>
+		<div class="canvas-cell" data-row=7 data-col=4>
+			<img src="images/canvas_117.jpg"></div>
+		<div class="canvas-cell" data-row=7 data-col=5>
+			<img src="images/canvas_118.jpg"></div>
+		<div class="canvas-cell" data-row=7 data-col=6>
+			<img src="images/canvas_119.jpg"></div>
+		<div class="canvas-cell" data-row=7 data-col=7>
+			<img src="images/canvas_120.jpg"></div>
+		<div class="canvas-cell" data-row=7 data-col=8>
+			<img src="images/canvas_121.jpg"></div>
+		<div class="canvas-cell" data-row=7 data-col=9>
+			<img src="images/canvas_122.jpg"></div>
+		<div class="canvas-cell" data-row=7 data-col=10>
+			<img src="images/canvas_123.jpg"></div>
+		<div class="canvas-cell" data-row=7 data-col=11>
+			<img src="images/canvas_124.jpg"></div>
+		<div class="canvas-cell" data-row=7 data-col=12>
+			<img src="images/canvas_125.jpg"></div>
+		<div class="canvas-cell" data-row=7 data-col=13>
+			<img src="images/canvas_126.jpg"></div>
+		<div class="canvas-cell" data-row=7 data-col=14>
+			<img src="images/canvas_127.jpg"></div>
+		<div class="canvas-cell" data-row=7 data-col=15	>
+			<img src="images/canvas_128.jpg"></div>
+	</div>
+</div>
+
+<form enctype="multipart/form-data" id="submitForm" action="upload.php" method="post">
+	<div id="clickedCell"></div><br><br>
+	<input type="file" id="myFile" name="file"><br><br>
+	Artist Name:<input type="text" name="artistName"><br><br>
+	email:<input type="email" name="email"><br><br>
+	<input type="submit" value="Upload">
+</form>
+
+
+<div id="footer">
+	<div id="footerRight"><span style="position:relative; float:right; right:1em; padding-bottom:2em;"> ©2015 Frances Mendes Levitin</span></div>
+		
+</div>
+
+<script type="text/javascript">
+	var canvasCell=document.getElementsByClassName("canvas-cell");
+	for (var i=0;i<canvasCell.length;i++){
+		canvasCell[i].addEventListener("click",function(event){
+			event.stopPropagation();
+			console.log(this.dataset.row, this.dataset.col);
+			document.getElementById("clickedCell").innerHTML = "Please provide all content you would like to display in association with canvas cell " + this.dataset.row +"," + this.dataset.col;
+			// prompt("would you like to submit content here");
+		}, true);
+	}
+
+	var aboutText = document.getElementById('aboutText');
+	var aboutLink = document.getElementById('about');
+	aboutLink = aboutLink.getElementsByTagName('a')[0];
+	aboutLink.addEventListener('click', showHide, true);
+	function showHide (event) {
+		event.preventDefault();
+		event.stopPropagation();
+		if(aboutText.style.display=="none"){
+			aboutText.style.display="inline-block";
+		}else{
+			aboutText.style.display="none";
+		}
+	};
+
+
+</script>
+</body>
+</html>

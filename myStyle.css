@@ -1,0 +1,94 @@
+html {
+		box-sizing: border-box;
+	}
+	*, *:before, *:after {
+		padding:0px;
+		margin:0px;
+		box-sizing:inherit;
+	}
+	body {
+		font-family: helvetica;
+	}
+	a {
+		text-decoration: none;
+		/*list-style-type: none;*/
+		color:black;
+	}
+	h1{
+		width:50%;
+		margin-top: 1em;
+		margin-left: 1em;
+	}
+	h3 {
+		margin-left: 1.6em;
+	}
+	#canvas-wrapper {
+		width:1152px;
+		height:576px;
+		margin:50 auto;
+		position:relative
+	}
+	.canvas-cell {
+		display:table-cell;
+		cursor: crosshair;
+		position: relative;
+		width: 72px;
+		height: 72px;
+	}
+	img {
+		width: 100%;
+		height: 100%;
+		position:absolute;
+
+	}
+	.canvas-cell.upload:hover img.default {
+		display: none;
+		opacity: 0.4;
+	}
+	.canvas-row {
+		position:relative
+	}
+	/*#footer {
+		width:100%;
+		
+		position:relative;
+		bottom:2.5em;
+		line-height: 1.3em;
+		
+
+	}*/
+	#footerRight {
+		/*float:right;*/
+		
+		bottom:1em;
+
+		
+	}
+	#about {
+		position:absolute;
+		top:1em;
+		right:1em;
+	}
+	#aboutText {
+		float:left;
+
+	}
+	#submitForm {
+		width:75%;
+		margin: 0 auto;
+	}
+	.hidden {
+		display: none;
+	}
+	#x {
+		visibility: hidden;
+	}
+	#y {
+		visibility: hidden;
+	}
+	#header {
+		width:95%;
+		position absolute;
+		float:right;
+	}
+	

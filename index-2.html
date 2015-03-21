@@ -1,78 +1,8 @@
 <html>
 <head>
 <title>canvas</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<style type="text/css">
-	html {
-		box-sizing: border-box;
-	}
-	*, *:before, *:after {
-		padding:0px;
-		margin:0px;
-		box-sizing:inherit;
-	}
-	body {
-		font-family: helvetica;
-	}
-	a {
-		text-decoration: none;
-		/*list-style-type: none;*/
-		color:black;
-	}
-	h1{
-		width:100%;
-		margin-top: 1em;
-		margin-left: 1em;
-	}
-	#canvas-wrapper {
-		width:1152px;
-		height:576px;
-		margin:50 auto;
-	}
-	.canvas-cell {
-		display:table-cell;
-		cursor: crosshair;
-	}
-	.cavas-cell img {
-		width: 72px;
-		height: 72px;
-	}
-	.canvas-cell img:hover {
-		  opacity: 0.6;
-		/*  border: green solid 1px;*/
-		/*  -webkit-box-shadow: 10px 10px 5px #888888;
-		box-shadow:10px 10px 5px #888888;	*/
-	}
-	/*#footer {
-		width:100%;
-		
-		position:relative;
-		bottom:2.5em;
-		line-height: 1.3em;
-		
-
-	}*/
-	#footerRight {
-		/*float:right;*/
-		
-		bottom:1em;
-
-		
-	}
-	#about {
-		position:absolute;
-		top:1em;
-		right:1em;
-	}
-	#aboutText {
-		float:left;
-	}
-	#submitForm {
-		width:75%;
-		margin: 0 auto;
-	}
-
-</style>
+<link rel="stylesheet" type="text/css" href="myStyle.css">
+<style type="text/css"></style>
 </head>
 <body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
 <!-- Save for Web Slices (canvas.jpg) -->
@@ -87,23 +17,23 @@
 <div id="canvas-wrapper">
 	<div class="canvas-row">
 		<div class="canvas-cell" data-row=0 data-col=0>
-			<img src="images/canvas_01.jpg"></div>
-		<div class="canvas-cell" data-row=0 data-col=1>
-			<img src="images/canvas_02.jpg"></div>
+			<img src="images/canvas_1.jpg"></div>
+		<div class="canvas-cell uploaded" data-row=0 data-col=1>
+			<img src="images/canvas_2.jpg"></div>
 		<div class="canvas-cell" data-row=0 data-col=2>
-			<img src="images/canvas_03.jpg"></div>
+			<img src="images/canvas_3.jpg"></div>
 		<div class="canvas-cell" data-row=0 data-col=3>
-			<img src="images/canvas_04.jpg"></div>
+			<img src="images/canvas_4.jpg"></div>
 		<div class="canvas-cell" data-row=0 data-col=4>
-			<img src="images/canvas_05.jpg"></div>
+			<img src="images/canvas_5.jpg"></div>
 		<div class="canvas-cell"  data-row=0 data-col=5>
-			<img src="images/canvas_06.jpg"></div>
+			<img src="images/canvas_6.jpg"></div>
 		<div class="canvas-cell" data-row=0 data-col=6>
-			<img src="images/canvas_07.jpg"></div>
+			<img src="images/canvas_7.jpg"></div>
 		<div class="canvas-cell" data-row=0 data-col=7>
-			<img src="images/canvas_08.jpg"></div>
+			<img src="images/canvas_8.jpg"></div>
 		<div class="canvas-cell" data-row=0 data-col=8>
-			<img src="images/canvas_09.jpg"></div>
+			<img src="images/canvas_9.jpg"></div>
 		<div class="canvas-cell" data-row=0 data-col=9>
 			<img src="images/canvas_10.jpg"></div>
 		<div class="canvas-cell" data-row=0 data-col=10>
@@ -256,7 +186,7 @@
 			<img src="images/canvas_80.jpg"></div>
 	</div>
 	<div class="canvas-row">
-		<div class="canvas-cell" data-row=5 data-col=0>
+		<div class="canvas-cell" id="50" data-row=5 data-col=0>
 			<img src="images/canvas_81.jpg"></div>
 		<div class="canvas-cell" data-row=5 data-col=1>
 			<img src="images/canvas_82.jpg"></div>
@@ -359,31 +289,89 @@
 	</div>
 </div>
 
-<form enctype="multipart/form-data" id="submitForm" action="upload.php" method="post">
-	<div id="clickedCell"></div><br><br>
-	<input type="file" id="myFile" name="file"><br><br>
-	Artist Name:<input type="text" name="artistName"><br><br>
-	email:<input type="email" name="email"><br><br>
-	<input type="submit" value="Upload">
+<form id="submitForm" enctype="multipart/form-data" action="upload.php" method="post">
+	
+	<div id="clickedCell"></div> <br><br>
+	<input id="myFile" type="file" name="file"> <br><br>
+	Artist Name:<input type="text" name="artistName"> <br><br>
+	email:<input type="email" name="email"> <br><br>
+	<input type="submit" value="Upload" id="submit">
+	<input type="text" id="x" name="x"> <br><br>
+	<input type="text" id="y" name="y"> <br><br>
 </form>
 
-
 <div id="footer">
-	<div id="footerRight"><span style="position:relative; float:right; right:1em; padding-bottom:2em;"> ©2015 Frances Mendes Levitin</span></div>
-		
+	<div id="footerRight"><span style="position:relative; float:right; right:1em; padding-bottom:2em;"> ©2015 Frances Mendes Levitin</span></div>		
 </div>
 
+
+<div class="result"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<!-- <script src="onCellClickEvent.js"></script> -->
 <script type="text/javascript">
+
+
+//display uploaded image or show form 
 	var canvasCell=document.getElementsByClassName("canvas-cell");
 	for (var i=0;i<canvasCell.length;i++){
+			//var thisCanvasCell = canvasCell[i];
 		canvasCell[i].addEventListener("click",function(event){
 			event.stopPropagation();
 			console.log(this.dataset.row, this.dataset.col);
-			document.getElementById("clickedCell").innerHTML = "Please provide all content you would like to display in association with canvas cell " + this.dataset.row +"," + this.dataset.col;
-			// prompt("would you like to submit content here");
-		}, true);
-	}
+	});
+}
 
+// document.getElementById("clickedCell").innerHTML = "Please provide all content you would like to display in association with canvas cell " + this.dataset.row +"," + this.dataset.col);
+
+
+
+
+
+	// var upload=canvasCell[i].childNode;
+	
+
+	// var upload=document.getElementsByClassName("canvas-cell");
+
+	// var z=(16*(this.dataset.row)) + this.dataset.col;
+	// if (hasClass(elem, " uploaded")) {
+
+	// 	upload.setAttribute ('src', 'uploads/canvas_'+z);
+
+	
+	
+
+
+
+			// document.getElementById
+			//checks if canvas cell i has class "uploaded"
+			// if ($(canvasCell[i]).classList.contains('uploaded'))) {
+			// 	$(this).attr('src', uploads/canvas_02.jpg );
+			// }
+			// else {
+			// 	$('submitForm').show();
+			// }
+		
+// Tell users which cell they are submitting content to
+		//	console.log(this.dataset.row, this.dataset.col);
+		//	document.getElementById("clickedCell").innerHTML = "Please provide all content you would like to display in association with canvas cell " + this.dataset.row +"," + this.dataset.col);
+
+		//	$('#x').val(this.dataset.row);
+		//	$('#y').val(this.dataset.col);
+
+//		}, true);
+//	}
+
+//Downloads image from server
+			$.get( "download.php?x=" + this.dataset.row + "&y=" + this.dataset.col, function( data ) {
+			  $( ".result" ).html( data );
+
+			});
+	
+
+// show|hide about text
 	var aboutText = document.getElementById('aboutText');
 	var aboutLink = document.getElementById('about');
 	aboutLink = aboutLink.getElementsByTagName('a')[0];
@@ -397,6 +385,20 @@
 			aboutText.style.display="none";
 		}
 	};
+
+//ADD CLASS of UPLOADED TO IMAGES if uploads are successful 
+//	funnction addClass (elem, className) {
+
+	// var canvasCell=document.getElementsByClassName("canvas-cell");
+//	var canvasCell-submit=
+	// var submit=document.getElementById ("submit");
+	// function addClassOnSubmit () {
+
+	// for (var i=0;i<canvasCell.length;i++){
+
+	// 	canvasCell[i].addEventListener("click",function(event){
+
+	// 	var z=(16*(this.dataset.row)) + this.dataset.col;
 
 
 </script>

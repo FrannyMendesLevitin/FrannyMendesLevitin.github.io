@@ -18,9 +18,9 @@
 
 <div id="canvas-wrapper">
 <?php
-	$servername = "localhost";
-	$username = "root";
-	$password = "root";
+	$servername = "dwnurjpk8269k9my.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
+	$username = "ky87ckk4qfzptwx6";
+	$password = "1b1a1nydwk07a643";
 	$dbname = "aaffAlienObjects";
 
 	// Create connection
@@ -96,7 +96,7 @@
 
 
 <div id="footer">
-	<div id="footerRight"><span style="position:relative; float:right; right:1em; padding-bottom:2em;"> &copy;2015 Frances Mendes Levitin</span></div>
+	<div id="footerRight"><span style="position:relative; float:right; right:1em; padding-bottom:2em;">&copy;2015 Frances Mendes Levitin</span></div>
 		
 </div>
 

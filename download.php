@@ -1,9 +1,9 @@
 <?php
 	
 
-$servername = "localhost";
-$username = "root";
-$password = "root";
+$servername = "dwnurjpk8269k9my.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
+$username = "ky87ckk4qfzptwx6";
+$password = "1b1a1nydwk07a643";
 $dbname = "aaffAlienObjects";
 
 // Create connection

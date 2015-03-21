@@ -12,12 +12,13 @@
 <body>
 <!-- Save for Web Slices (canvas.jpg) -->
 
+<div id=header>
 <span><h1>Alien Objects</h1></span>
 
 <span id="aboutText" style="text-align:left; display: none; max-width:690px; margin:1em 1em; font-size:16px;">Alien Objects is an artwork celebrating open referencing of information. <br><br><b>Statement from the artist:</b> Impulses in my own life, and data I acquire in physical and digital space become the evidence of my stories and the props for my performances. I invite you to join by submitting content or email me with feedback or questions at fmendeslevitin[at]gmail.com<br>Programming this site was supported by JP Obey & John Corser.</span>
 <span id="about" style="text-align: left;"><a href="#">About</span>
 
-
+</div>
 <div id="canvas-wrapper">
 <?php
 	$servername = "localhost";

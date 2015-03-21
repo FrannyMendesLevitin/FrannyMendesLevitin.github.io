@@ -4,25 +4,23 @@
 <title>canvas</title>
 <link rel="stylesheet" type="text/css" href="myStyle.css">
 <style type="text/css">
-	.canvas-cell {position:relative;}
-	img { width: 72px; height: 72px; position:absolute;}
-	.canvas-cell.upload:hover img.default { display: none; }
+
 </style>
 </head>
 <body>
 <!-- Save for Web Slices (canvas.jpg) -->
+<div id="header">
+<span><h1>Alien Objects</h1><h3>in beta</h3></span>
 
-<span><h1>Alien Objects</h1></span>
-
-<span id="aboutText" style="text-align:left; display: none; max-width:690px; margin:1em 1em; font-size:16px;">Alien Objects is an artwork celebrating open referencing of information. <br>Statement from the artist: Impulses in my own life, and data I acquire in physical and digital space become the evidence of my stories and the props for my performances. I invite you to join by submitting content or email me with feedback or questions at fmendeslevitin[at]gmail.com</span>
+<span id="aboutText" style="text-align:left; display: none; max-width:690px; margin:1em 1em; font-size:16px;">Alien Objects is an artwork celebrating open referencing of information. <br>Statement from the artist: Impulses in my own life, and data I acquire in physical and digital space become the evidence of my stories and the props for my performances. I invite you to join by submitting content or email me with feedback or questions at fmendeslevitin[at]gmail.com<br>Programming this site was supported by JP Obey & John Corser.</span>
 <span id="about" style="text-align: left;"><a href="#">About</span>
-
+</div>
 
 <div id="canvas-wrapper">
 <?php
-	$servername = "localhost";
-	$username = "root";
-	$password = "root";
+	$servername = "dwnurjpk8269k9my.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
+	$username = "ky87ckk4qfzptwx6";
+	$password = "1b1a1nydwk07a643";
 	$dbname = "aaffAlienObjects";
 
 	// Create connection
@@ -83,7 +81,7 @@
 
 
 
-<form id="submitForm" enctype="multipart/form-data" action="upload.php" method="post">
+<form id="submitForm" class="hidden" enctype="multipart/form-data" action="upload.php" method="post">
 	<div id="clickedCell"></div><br><br>
 	
 	<input id="myFile" type="file" name="file"><br><br>
@@ -98,7 +96,7 @@
 
 
 <div id="footer">
-	<div id="footerRight"><span style="position:relative; float:right; right:1em; padding-bottom:2em;"> ©2015 Frances Mendes Levitin</span></div>
+	<div id="footerRight"><span style="position:relative; float:right; right:1em; padding-bottom:2em;">&copy;2015 Frances Mendes Levitin</span></div>
 		
 </div>
 
@@ -109,31 +107,57 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 <script type="text/javascript">
-	var canvasCell = document.getElementsByClassName("canvas-cell");
+	var submitForm = document.getElementById("submitForm");
 
 	function cellClickHandler(event) {
 
 		event.stopPropagation();
 		
-		$('#submitForm').show();
-
-
 		//Downloads image from server
-		$.get( "download.php?x=" + this.dataset.row + "&y=" + this.dataset.col, function( data ) {
-		  $( ".result" ).html( data );
+		//$.get( "download.php?x=" + this.dataset.row + "&y=" + this.dataset.col, function( data ) {
+		//  $( ".result" ).html( data );
 
-		});
+		//});
 		
 		console.log(this.dataset.row, this.dataset.col);
 		document.getElementById("clickedCell").innerHTML = "Please provide all content you would like to display in association with canvas cell " + this.dataset.row +"," + this.dataset.col;
 
 		$('#x').val(this.dataset.row);
 		$('#y').val(this.dataset.col);
-	}
 
-	for (var i=0;i<canvasCell.length;i++) {
+		if (this.className.indexOf("upload") === -1) {
+
+			// If no upload, show submit form
+			submitForm.className = "";
+
+		} else {
+
+			submitForm.className = "hidden";
+
+			var def = this.getElementsByClassName('default')[0];
+			var idx = def.className.indexOf("hidden");
+
+			if ( idx === -1) {
+
+				// If upload, hide default
+				def.className += " hidden";
+
+			} else {
+
+				// If default is hidden, then show the default
+				def.className = def.className.replace("hidden", "");
+			}
+			
+			
+
+		}		
+	}
+	
+	// Attach click handler to each cell
+	var canvasCells = document.getElementsByClassName("canvas-cell");
+	for (var i=0;i<canvasCells.length;i++) {
 		// Get the cell
-		var cell = canvasCell[i];
+		var cell = canvasCells[i];
 
 		// Add the click handler
 		cell.addEventListener("click", cellClickHandler, true);
@@ -153,25 +177,7 @@
 		}
 	};
 
-
-/*	var uploads = document.getElementsByClassName("upload")
-	// Event handler for showing new images
-
-	for(var i=0; i < uploads.length; i++) {
-	   var cell = uploads[i];
-	   var img = cell.getElementsByTagName("img")[0];
-	   var newsrc = "data:image/png;base64," + cell.dataset.newsrc;
-	   img.addEventListener("mouseenter", function(event) {
-	   	  event.stopPropagation();
-	      this.src = newsrc;
-	   }, true)
-
-	   img.addEventListener("mouseout", function(event) {
-	   	  event.stopPropagation();
-	      this.src = cell.dataset.originalsrc;
-	   }, true);
-	}*/
-
+//Add event listener to the click event 
 
 </script>
 </body>

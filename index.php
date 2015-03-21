@@ -34,9 +34,9 @@ if ($conn->connect_error) {
 // Create database
 $sql = "CREATE DATABASE aaffAlienObjects";
 if ($conn->query($sql) === TRUE) {
-    echo "Database created successfully";
+    "Database created successfully";
 } else {
-    echo "Error creating database: " . $conn->error;
+    "Error creating database: " . $conn->error;
 }
 $conn->close();
 
@@ -53,16 +53,14 @@ if (!$conn) {
 $sql = "CREATE TABLE `uploads` ( `id` int(6) NOT NULL AUTO_INCREMENT, `x` int(6) NOT NULL, `y` int(6) NOT NULL, `file` blob NOT NULL, `email` varchar(50) DEFAULT NULL, `artist_name` varchar(50) DEFAULT NULL, PRIMARY KEY (`id`) ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;";
 
 if (mysqli_query($conn, $sql)) {
-    echo "Table uploads created successfully";
+     "Table uploads created successfully";
 } else {
-    echo "Error creating table: " . mysqli_error($conn);
+     "Error creating table: " . mysqli_error($conn);
 }
 
 
 $conn->close();
 ?>
-
-HEROKU TEST
 
 <?php
 	$servername = "dwnurjpk8269k9my.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";

@@ -61,7 +61,9 @@ if (mysqli_query($conn, $sql)) {
 
 $conn->close();
 ?>
-	
+
+HEROKU TEST
+
 <?php
 	$servername = "dwnurjpk8269k9my.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
 	$username = "ky87ckk4qfzptwx6";

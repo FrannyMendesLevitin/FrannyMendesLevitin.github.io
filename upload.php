@@ -107,8 +107,12 @@ copy($_FILES["file"]["tmp_name"], "Uploads/canvas_$z.jpg");
 
 } 
 
+
 ?>
 
+<script type="text/javascript">
+	history.go(-1);
+</script>
 
 
 

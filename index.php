@@ -130,7 +130,7 @@ $conn->close();
 	<div id="clickedCell"></div><br><br>
 	
 	<input id="myFile" type="file" name="file"><br><br>
-	Artist Name:<input type="text" name="artistName"><br><br>
+	Artist Name:<input type="text" name="artist_name"><br><br>
 	email:<input type="email" name="email"><br><br>
 	<input type="submit" value="Upload">
 	<input type="text" id="x" name="x"><br><br>
@@ -186,14 +186,17 @@ $conn->close();
 
 				// If upload, hide default
 				def.className += " hidden";
+				
+				$.get('get.php?x=' + this.dataset.row + '&y=' + this.dataset.col, function(data){
+					alert(data);
+				});
 
 			} else {
 
 				// If default is hidden, then show the default
 				def.className = def.className.replace("hidden", "");
-			}
-			
-			
+
+			}			
 
 		}		
 	}

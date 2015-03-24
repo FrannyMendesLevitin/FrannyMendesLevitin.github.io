@@ -127,7 +127,7 @@ $conn->close();
 
 <form id="submitForm" class="hidden" enctype="multipart/form-data" action="upload.php" method="post">
 	<div id="clickedCell"></div><br>
-	<div>Warning: Can only support jpgs under 800KB</div><br>
+	<div>In beta: best uploads will be with pngs under 800KB</div><br>
 	<input id="myFile" type="file" name="file"><br><br>
 	Artist Name:<input type="text" name="artist_name"><br><br>
 	email:<input type="email" name="email"><br><br>
